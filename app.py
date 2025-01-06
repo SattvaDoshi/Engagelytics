@@ -3,7 +3,7 @@ import json
 import requests
 from typing import Optional
 from dotenv import load_dotenv
-
+import os
 # Constants
 load_dotenv()
 
