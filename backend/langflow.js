@@ -1,11 +1,10 @@
-// Note: Replace **<YOUR_APPLICATION_TOKEN>** with your actual Application token
-
-class LangflowClient {
+export class LangflowClient {
     constructor(baseURL, applicationToken) {
         this.baseURL = baseURL;
         this.applicationToken = applicationToken;
     }
-    async post(endpoint, body, headers = {"Content-Type": "application/json"}) {
+
+    async post(endpoint, body, headers = { "Content-Type": "application/json" }) {
         headers["Authorization"] = `Bearer ${this.applicationToken}`;
         headers["Content-Type"] = "application/json";
         const url = `${this.baseURL}${endpoint}`;
@@ -70,55 +69,3 @@ class LangflowClient {
         }
     }
 }
-
-async function main(inputValue, inputType = 'chat', outputType = 'chat', stream = false) {
-    const flowIdOrName = 'c8e26aca-f070-4cef-b0bb-87346250c8ea';
-    const langflowId = '8231c06a-3f25-4803-af8c-5e02695e8843';
-    const applicationToken = '<YOUR_APPLICATION_TOKEN>';
-    const langflowClient = new LangflowClient('https://api.langflow.astra.datastax.com',
-        applicationToken);
-
-    try {
-      const tweaks = {
-  "AstraDBToolComponent-LRArI": {},
-  "ParseData-AIblJ": {},
-  "CombineText-dDLVs": {},
-  "Prompt-t8ix0": {},
-  "ChatOutput-0qDHE": {},
-  "GroqModel-4EVY6": {},
-  "ChatInput-kZ0Yh": {}
-};
-      response = await langflowClient.runFlow(
-          flowIdOrName,
-          langflowId,
-          inputValue,
-          inputType,
-          outputType,
-          tweaks,
-          stream,
-          (data) => console.log("Received:", data.chunk), // onUpdate
-          (message) => console.log("Stream Closed:", message), // onClose
-          (error) => console.log("Stream Error:", error) // onError
-      );
-      if (!stream && response && response.outputs) {
-          const flowOutputs = response.outputs[0];
-          const firstComponentOutputs = flowOutputs.outputs[0];
-          const output = firstComponentOutputs.outputs.message;
-
-          console.log("Final Output:", output.message.text);
-      }
-    } catch (error) {
-      console.error('Main Error', error.message);
-    }
-}
-
-const args = process.argv.slice(2);
-if (args.length < 1) {
-  console.error('Please run the file with the message as an argument: node <YOUR_FILE_NAME>.js "user_message"');
-}
-main(
-  args[0], // inputValue
-  args[1], // inputType
-  args[2], // outputType
-  args[3] === 'true' // stream
-);
