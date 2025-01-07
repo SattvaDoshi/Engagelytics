@@ -14,7 +14,7 @@ export default function Chatbot() {
         setIsLoading(true);
 
         try {
-            const response = await fetch('http://localhost:5000/chat', {
+            const response = await fetch(`https://engagelytics.onrender.com/chat`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -105,7 +105,7 @@ export default function Chatbot() {
     };
 
     return (
-        <div className="flex flex-col h-screen bg-gradient-to-br md:pt-20 from-gray-900 via-gray-800 to-gray-900">
+        <div className="flex flex-col h-screen bg-gradient-to-br pt-20 md:pt-20 from-gray-900 via-gray-800 to-gray-900">
 
             <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
                 {messages.map((msg, index) => (
