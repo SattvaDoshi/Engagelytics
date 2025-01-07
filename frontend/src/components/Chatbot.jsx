@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './../styles/chatbot.css';
 
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);
@@ -15,11 +14,12 @@ const Chatbot = () => {
         setIsLoading(true);
 
         try {
-            const response = await axios.post('http://localhost:3000/api/chat', {
+            const response = await axios.post('http://localhost:5000/chat', {
                 message: input,
                 stream: false
             });
-            const botMessage = { sender: 'bot', text: response.data.message };
+            
+            const botMessage = { sender: 'bot', text: response.data.response };
             setMessages(prev => [...prev, botMessage]);
         } catch (error) {
             const errorMessage = {
@@ -42,8 +42,9 @@ const Chatbot = () => {
     };
 
     return (
-        <div className="page-container">
+        <div className="page-container bg-red">
             <div className="main-header">
+            <div class="bg-blue-500 text-white p-4">Hello, Tailwind!</div>
                 <img 
                     src="/assets/team_logo.png" 
                     alt="Team Logo" 

@@ -11,6 +11,7 @@ app.use(cors());
 app.use(json());
 
 // Apply routes
+app.get('/', (req, res) => res.send('Hello World!'));
 app.use('/', routes);
 
 // Start server
