@@ -1,4 +1,4 @@
-# Project Name
+# Engagelytics 
 
 ## Overview
 This project leverages the MERN (MongoDB, Express.js, React.js, Node.js) tech stack for building a dynamic and user-friendly website. The backend integrates a powerful AI model created using Langflow, trained on a synthetic dataset, to deliver advanced insights and functionalities.
@@ -14,6 +14,7 @@ This project leverages the MERN (MongoDB, Express.js, React.js, Node.js) tech st
 ### Frontend
 - **React.js**: For building an interactive and responsive user interface.
 - **CSS Framework**: Styled with modern design principles.
+![image](https://github.com/user-attachments/assets/19d9cac4-bc76-4f79-8972-ccc8760e3cf5)
 
 ### Backend
 - **Node.js**: For server-side logic and API development.
