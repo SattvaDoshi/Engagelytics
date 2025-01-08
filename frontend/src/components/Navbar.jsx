@@ -17,7 +17,7 @@ const Navbar = () => {
               alt="Logo"
               className="h-16 w-20 rounded-lg"
             />
-            <span className="ml-2 text-xl font-bold text-white">TrendLens</span>
+            <span className="ml-2 text-xl font-bold text-white">Engagelytics</span>
           </div>
 
           {/* Desktop Navigation */}
