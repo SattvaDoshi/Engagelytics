@@ -24,6 +24,9 @@ This project leverages the MERN (MongoDB, Express.js, React.js, Node.js) tech st
 ### AI Model
 - **Langflow**: Used for creating and fine-tuning the AI model.
 - **Python**: For synthetic data generation and preprocessing.
+  
+## Deployment Link
+https://engagelytics-iota.vercel.app/
 
 ## Installation
 1. Clone the repository:
