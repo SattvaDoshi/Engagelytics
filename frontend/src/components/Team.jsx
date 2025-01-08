@@ -14,28 +14,28 @@ const TeamPage = () => {
 
   const teamMembers = [
     {
-      name: "Sarah Chen",
-      role: "Lead Data Scientist",
+      name: "Sattva Doshi",
+      role: "AI Engineer",
       description: "Expert in machine learning and AI with 8+ years of experience in social media analytics. Previously led data science teams at major tech companies and contributed to breakthrough research in engagement prediction models.",
-      image: "/api/placeholder/400/400",
+      image: "/Sattva.jpeg",
     },
     {
-      name: "Marcus Rodriguez",
-      role: "Full Stack Developer",
+      name: "Charmi Panchal",
+      role: "ML Engineer",
+      description: "Builds and optimizes machine learning models for large-scale applications. Previously contributed to scalable ML systems at major organizations in the tech and finance sectors.",
+      image: "/Charmi.jpeg",
+    },
+    {
+      name: "Heet Choudhari",
+      role: "Full-Stack Developer",
       description: "Full stack developer specialized in React and Node.js. Created multiple successful social media management platforms and brings expertise in building scalable analytics dashboards.",
-      image: "/api/placeholder/400/400",
+      image: "/Heet.jpeg",
     },
     {
-      name: "Aisha Patel",
-      role: "UI/UX Designer",
-      description: "Award-winning designer with a passion for creating intuitive user experiences. Has designed interfaces for several popular social media tools and believes in user-centered design approaches.",
-      image: "/api/placeholder/400/400",
-    },
-    {
-      name: "David Kim",
-      role: "Product Manager",
-      description: "Strategic product leader with background in social media marketing. Previously managed product teams at leading social platforms and understands the challenges of modern social media growth.",
-      image: "/api/placeholder/400/400",
+      name: "Ayush Mankame",
+      role: "Data Engineer",
+      description: "Constructs and manages robust data pipelines and architectures. Played a key role in handling big data infrastructure at top enterprises in the tech and analytics industries.",
+      image: "/Ayush.jpeg",
     }
   ];
 
